@@ -1,7 +1,7 @@
 
 
 
-typedef struct{
+typedef struct Queue{
 	NodePtr headPtr,tailPtr;
 	int size;
 }Queue;
@@ -9,6 +9,8 @@ typedef struct{
 
 void enqueue_struct(Queue* q, int ordernum,int qty){
   Node *new_node=(Node*) malloc(sizeof(Node));
+
+
 if(new_node){ 
         new_node->order_number=ordernum;
         new_node->quantity=qty;
@@ -21,12 +23,12 @@ if(new_node){
     q->tailPtr=new_node;
     q->size++;
 
-    printf("%d %d\n",q->tailPtr->order_number,q->tailPtr->quantity);
+    //printf("%d %d\n",q->tailPtr->order_number,q->tailPtr->quantity);
+    printf("My order is %d\n",q->tailPtr->order_number);
  }
  else{
   printf("fail");
  }
- 
 }
 
 
@@ -38,15 +40,17 @@ int dequeue_struct(Queue *q){
    int cash;
    if(o==1)
    {
-    
+      printf("Ramen\n");
       cash = n*100;
    }
    else if (o==2)
    {
+      printf("Somtum\n");
       cash = n*20;
    }
    else if (o==3)
    {
+      printf("Fried Chicken\n");
       cash = n*50;
    }
    else cash = 0;

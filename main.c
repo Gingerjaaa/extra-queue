@@ -36,18 +36,35 @@ int main(int argc , char **argv) {
 
 // printf("%d \n", argc);
 // printf("%d %d \n", atoi(argv[1]),atoi(argv[1+1]));
-int i,customerid=1;
+
+int i,customerid=1,c;
 for(i=1;i<argc;i++) {
         if(strcmp(argv[i],"x")==0){
             printf("customer no : %d\n",customerid);
             x=dequeue_struct(&q);
             customerid++;
             if(x!=0)
-            printf("cash %d\n",x);
-        }else{
+            printf("You have to pay %d\n",x);
+            while(1)
+            {
+              printf("Cash : ");
+              scanf("%d",&c);
+              if(c>=x)
+              break;
+            }
+            printf("Thank you\n");
+            if(c>x)
+            {
+              printf("Change is : %d\n",c-x);
+            }
+        }
+        else
+        {
           enqueue_struct(&q, atoi(argv[i]),atoi(argv[i+1]));
           i++;
         }
  }
+ printf("===========================================\n");
+ printf("There are %d ppl left in the queue\n",q.size);
   return 0;
 }
