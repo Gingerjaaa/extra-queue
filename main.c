@@ -21,24 +21,32 @@ int main(int argc , char **argv) {
 
 //For struct Queue
   Queue  q;
-   q. headPtr=NULL;
+   q.headPtr=NULL;
    q.tailPtr=NULL;
    q.size=0;
   int i;
 
-  //enqueue_struct(&q,7);
+  //enqueue_struct(&q,1,2);
+  x=dequeue_struct(&q);
+  if(x!=0)
+  printf("cash %d\n",x);
    
-for(i=1;i<argc;i++)
-{
-        if(strcmp(argv[i],"x")==0){
-            x=dequeue_struct(&q);\
-            if(x!=0)
-            printf("dequeing %d\n",x);
-        }
-        else 
-        {
-          enqueue_struct(&q, atoi(argv[i]));
-        }
- }
+
+
+
+
+
+// for(i=1;i<argc;i++)
+// {
+//         if(strcmp(argv[i],"x")==0){
+//             x=dequeue_struct(&q);\
+//             if(x!=0)
+//             printf("dequeing %d\n",x);
+//         }
+//         else 
+//         {
+//           enqueue_struct(&q, atoi(argv[i]));
+//         }
+//  }
   return 0;
 }
