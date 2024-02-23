@@ -10,11 +10,6 @@ typedef struct{
 void enqueue_struct(Queue* q, int ordernum,int qty){
   Node *new_node=(Node*) malloc(sizeof(Node));
 if(new_node){ 
-  //q->head;
-  //q->tailPtr
-  
-  //q->size
-
         new_node->order_number=ordernum;
         new_node->quantity=qty;
         new_node->nextPtr=NULL;
@@ -27,9 +22,11 @@ if(new_node){
     q->size++;
 
     printf("%d %d\n",q->tailPtr->order_number,q->tailPtr->quantity);
-
-  /*Finish enqueue */
  }
+ else{
+  printf("fail");
+ }
+ 
 }
 
 
@@ -41,6 +38,7 @@ int dequeue_struct(Queue *q){
    int cash;
    if(o==1)
    {
+    
       cash = n*100;
    }
    else if (o==2)
